@@ -1,6 +1,6 @@
 <?php
 session_start();
-print_r($_SESSION);
+// print_r($_SESSION);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +13,14 @@ print_r($_SESSION);
 <body>
     <form action="/phpcourses/elyas/receive.php" method='post'>
 
+    
+        <?php if(isset($_SESSION["error"]['credential'])): ?>
+            <div style="color:red"><?php echo $_SESSION["error"]['credential'] ?></div>
+        <?php endif ?>
+         <br>
+        
+    
+    
         <input type="text" name='email'><br>
         <?php if(isset($_SESSION["error"]['email'])): ?>
             <div style="color:red"><?php echo $_SESSION["error"]['email'] ?></div>
